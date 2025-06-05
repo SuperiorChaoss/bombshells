@@ -1,0 +1,1101 @@
+/* ------------------------------------ */
+/* Base Reset                           */
+/* ------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+/* Global Styles                        */
+/* ------------------------------------ */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #f1f1f1;
+  background-color: #000;
+  line-height: 1.6;
+  /* Prevent navbar overlap */
+  padding-top: 60px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Consistent horizontal padding on containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+/* Navbar                                */
+/* ------------------------------------ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background:
+    /* Overlay color */
+    rgba(0, 0, 0, 0.)
+    /* Underlying image */
+    url('images/') center/cover no-repeat;
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: auto;
+  min-height: 50px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.nav-links a {
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* Hamburger on mobile */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.75rem 2rem;
+    width: 100%;
+  }
+}
+
+/* ------------------------------------ */
+/* Hero Section                          */
+/* ------------------------------------ */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('images/herobg.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ------------------------------------ */
+/* Buttons                               */
+/* ------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #e6c200;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+/* ------------------------------------ */
+/* Section Headings                      */
+/* ------------------------------------ */
+.section {
+  padding: 6rem 10% 4rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------ */
+/* Services Section                      */
+/* ------------------------------------ */
+#services {
+  background: linear-gradient(
+    to bottom,
+    #d4af37 0%,    /* bright gold */
+    #43320694 40%,   /* deeper gold */
+    #000000 100%   /* solid black */
+  );
+}
+
+/* Desktop: two-column layout */
+.service-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-direction: row;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 400px;
+}
+
+.service-text {
+  color: #f1f1f1;
+}
+
+.service-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.service-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.service-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.service-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+}
+
+.button-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-wrapper .btn {
+  display: inline-block;
+}
+
+.service-image {
+  flex: 1 1 400px;
+  display: inline-block;
+  padding: 3px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.service-image img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  display: block;
+}
+
+/* ------------------------------------ */
+/* Responsive (below 768px)              */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  .service-block {
+    flex-direction: column;
+    text-align: center;
+  }
+  .left-col {
+    display: contents;
+  }
+  .service-text {
+    order: 1;
+    flex: 1 1 auto;
+    text-align: left;
+    padding: 0 0.5rem;
+    margin: 0 auto;
+    max-width: 90vw;
+  }
+  .service-image {
+    order: 2;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 90vw;
+    margin: 1rem auto;
+    padding: 3px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  .service-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  }
+  .button-wrapper {
+    order: 3;
+    flex: 0 0 auto;
+    margin: 1rem auto;
+    width: 80%;
+  }
+  .button-wrapper .btn {
+    width: 100%;
+  }
+}
+
+/* Smaller phones (under 480px) */
+@media (max-width: 480px) {
+  .hero {
+    background-position: center 35%;
+  }
+  #services .section-title,
+  #testimonials .section-title,
+  #booking .section-title {
+    white-space: nowrap;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .service-text h3 {
+    font-size: 1.2rem;
+  }
+  .service-text p {
+    font-size: 0.95rem;
+  }
+  .service-list li {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* ------------------------------------ */
+/* Booking Section                       */
+/* ------------------------------------ */
+#booking {
+  background-color: #000;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ------------------------------------ */
+/* About Section                         */
+/* ------------------------------------ */
+#about {
+  background-color: #111;
+  padding: 6rem 10% 4rem;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #f1f1f1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ------------------------------------ */
+/* Gallery Section                       */
+/* ------------------------------------ */
+.section-dark {
+  background-color: #000;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.gallery-button .btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* ------------------------------------ */
+/* Testimonials Section                  */
+/* ------------------------------------ */
+#testimonials {
+  background-color: #000;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-author {
+  display: block;
+  font-weight: 700;
+  color: #ffd700;
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------ */
+/* Contact Section                       */
+/* ------------------------------------ */
+#contact {
+  background-color: #111;
+  padding: 6rem 10% 4rem;
+}
+
+#contact .cta-text {
+  color: #ddd;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------ */
+/* Footer                                */
+/* ------------------------------------ */
+footer {
+  background-color: #111;
+  color: #888;
+  padding: 2rem 10%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-left p,
+.footer-right p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-right a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------ */
+/* Loading Curtain Styles                */
+/* ------------------------------------ */
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff8dc;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.loading-line {
+  position: absolute;
+  height: 4px;
+  background-color: #ffd700;
+}
+
+.loading-line.top {
+  top: 40%;
+  left: 0;
+  width: 0;
+  animation: slideInLTR 3s ease-out forwards;
+}
+
+.loading-line.bottom {
+  top: 60%;
+  right: 0;
+  width: 0;
+  animation: slideInRTL 3s ease-out forwards;
+}
+
+@keyframes slideInLTR {
+  to { width: 100%; }
+}
+@keyframes slideInRTL {
+  to { width: 100%; }
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#loading-overlay.fade-out {
+  animation: fadeOutOverlay 0.5s ease-in forwards;
+}
+@keyframes fadeOutOverlay {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* -----------------------------------------------------------------
+   Glassmorphic Hero Text Box (wider, less tall)
+   ----------------------------------------------------------------- */
+.hero-text-box {
+  /* Make it span more of the viewport width: */
+  width: 100%;             /* 80% of the viewport’s width */
+  max-width: 900px;       /* but never exceed 900px on large screens */
+  
+  /* Reduce vertical padding so it’s not so tall: */
+  padding: 1.5rem 9rem;   /* 1.5rem top/bottom, 2rem left/right */
+  
+  /* Semi-opaque white with blur, as before: */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Rounded corners and subtle shadow: */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  text-align: center;
+  margin: 0 auto;        /* center it horizontally */
+}
+
+/* Adjust the H1/P inside so they don’t wrap too tightly */
+.hero-text-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;     /* you can tweak this if needed */
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero-text-box p {
+  font-size: 1.15rem;
+  margin-bottom: 1.75rem;
+  color: #ffffff;
+}
+
+/* Keep your button styling inside the box the same: */
+.hero-text-box .btn-primary {
+  background-color: #ffd700;
+  color: #000;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.hero-text-box .btn-primary:hover {
+  background-color: #e6c200;
+}
+
+@media (max-width: 768px) {
+  .hero-text-box {
+    /* Make the box nearly full‐width of the viewport, but with small side margins */
+    width: 90vw;          /* occupy 90% of viewport width */
+    max-width: none;      /* remove desktop max‐width cap so it truly can shrink */
+    margin: 1rem auto;    /* add a little vertical space, center horizontally */
+
+    /* Reduce the padding so it doesn’t appear too “tall” on small screens */
+    padding: 1rem 1rem;   /* 1rem top/bottom, 1rem left/right */
+
+    /* (box-sizing: border-box already inherited, so the padding is inside that 90vw) */
+  }
+
+  /* Optional: scale down font sizes inside as well */
+  .hero-text-box h1 {
+    font-size: 2rem;      /* smaller heading on mobile */
+    margin-bottom: 0.75rem;
+  }
+  .hero-text-box p {
+    font-size: 1rem;      /* slightly smaller paragraph text */
+    margin-bottom: 1rem;
+  }
+  .hero-text-box .btn-primary {
+    padding: 0.6rem 1.2rem; /* smaller button on mobile */
+    font-size: 0.95rem;
+  }
+}
+
+    /* ─────────────────────────────────────────────────────────
+       Section Title Styles
+       ───────────────────────────────────────────────────────── */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffd700;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    #brow-closures p {
+      color: #fff;
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       Glass Tiles (List of Services)
+       ───────────────────────────────────────────────────────── */
+    .glass-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .glass-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1.4;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+    .glass-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       “Reserve Your Spot” Button
+       ───────────────────────────────────────────────────────── */
+    .btn-outline {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      color: #ffd700;
+      border: 2px solid #ffd700;
+      background-color: transparent;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn-outline:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       Desktop Layout: Text/Glass‐Tiles (left) + Image (right)
+       ───────────────────────────────────────────────────────── */
+    #brow-closures {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      padding: 4rem 0;
+    }
+    #brow-closures .left-column {
+      flex: 1 1 400px;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       Mobile Overrides (≤ 768px)
+       ───────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      #brow-closures {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+      }
+      #brow-closures .left-column,
+      #brow-closures .service-image {
+        width: 100%;
+      }
+      .glass-item {
+        width: 100%;
+        padding: 0.75rem 1rem;
+      }
+      .btn-outline {
+        width: 80%;
+        margin: 1rem auto 0;
+        text-align: center;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────────
+   2A) Transform CTA – Background Container
+   ───────────────────────────────────────────────────────── */
+#transform-cta .transform-bg {
+  /* Use your swirling background exactly as the “Renew/Restore/Reveal” section */
+  background: url('images/wp12821797.webp') center/cover no-repeat;
+  position: relative;
+  padding: 6rem 0;                  /* top & bottom padding – adjust if you need more or less vertical space */
+}
+
+/* ─────────────────────────────────────────────────────────
+   2B) Transform CTA – Glass Panel (centers all content)
+   ───────────────────────────────────────────────────────── */
+#transform-cta .transform-panel {
+  /* Make it translucent/frosted */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* White border & rounding */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+
+  /* Constrain width and center horizontally */
+  max-width: 800px;      /* caps the glass panel’s width on large screens */
+  margin: 0 auto;        /* center in the parent .transform-bg */
+
+  /* Padding for content inside */
+  padding: 2rem 2.5rem;
+
+  /* Center text & items */
+  text-align: center;
+  color: #fff;           /* all text inside will be white */
+}
+
+/* ─────────────────────────────────────────────────────────
+   2C) Transform CTA – Heading / Paragraph / Button styling
+   ───────────────────────────────────────────────────────── */
+#transform-cta .transform-panel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;     /* adjust as needed */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#transform-cta .transform-panel p {
+  font-size: 1.125rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+  max-width: 700px;      /* optional, limits paragraph width inside panel */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Use the same yellow/black button style you already have */
+#transform-cta .transform-panel .btn-primary {
+  background-color: #ffd700;   /* bright yellow */
+  color: #000;                 /* black text */
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+#transform-cta .transform-panel .btn-primary:hover {
+  background-color: #e6c200;   /* slightly darker yellow on hover */
+  color: #000;
+}
+/* ─────────────────────────────────────────────────────────
+   Add vertical fade at top & bottom of the swirl background
+───────────────────────────────────────────────────────── */
+#transform-cta .transform-bg {
+  /* 1) Keep the exact same background rules as before: */
+  background: url('images/wp12821797.webp') center/cover no-repeat;
+  position: relative;
+  padding: 6rem 0;
+
+  /* 2) Apply a mask that is transparent at the very top/bottom, solid in between */
+  -webkit-mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,     /* transparent at 0% (very top) */
+      rgba(0,0,0,1) 10%,    /* fade up to fully opaque by 10% down */
+      rgba(0,0,0,1) 90%,    /* remain fully opaque until 90% down */
+      rgba(0,0,0,0) 100%    /* fade back to transparent at 100% (very bottom) */
+    );
+  mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,1) 10%,
+      rgba(0,0,0,1) 90%,
+      rgba(0,0,0,0) 100%
+    );
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* ─────────────────────────────────────────────────────────
+   2D) Responsive Adjustments
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Reduce padding on transform-bg so it isn’t too tall on small screens */
+  #transform-cta .transform-bg {
+    padding: 4rem 0;
+  }
+  /* Shrink the “glass panel” horizontally on mobile */
+  #transform-cta .transform-panel {
+    padding: 1.5rem 1.25rem;
+    max-width: 90vw;   /* panel can be up to 90% of viewport width */
+  }
+  /* Shrink heading/text slightly */
+  #transform-cta .transform-panel h2 {
+    font-size: 2rem;
+  }
+  #transform-cta .transform-panel p {
+    font-size: 1rem;
+  }
+  /* Let the button span most of the panel’s width on mobile */
+  #transform-cta .transform-panel .btn-primary {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+}
+
+/* ....................................................................
+   Section Title (H2) Centering
+   .................................................................... */
+#portfolio .section-title {
+  text-align: center;
+  margin: 0 auto 2rem; /* top 0, horizontal auto (centers), bottom 2rem */
+}
+
+/* ....................................................................
+   View All Button Centering
+   .................................................................... */
+.view-all-wrapper {
+  text-align: center;
+  margin-top: 2rem; /* space above the button */
+}
+
+/* ....................................................................
+   Gallery Grid (example) – optional reminders to keep items centered
+   .................................................................... */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto; /* center the entire grid in its parent */
+}
+
+/* ....................................................................
+   Button Style (if needed)
+   .................................................................... */
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+/* ---------------------------------------- */
+/* 1) Center the Section Title (H2)        */
+/* ---------------------------------------- */
+#testimonials .section-title {
+  text-align: center;
+  margin: 0 auto 2rem; /* top 0, auto horizontal centering, bottom 2rem spacing */
+}
+
+/* ---------------------------------------- */
+/* 2) Black Glass‐Tile Style for Cards      */
+/* ---------------------------------------- */
+#testimonials .testimonial-card {
+  background: rgba(0, 0, 0, 0.6);       /* mostly transparent black */
+  backdrop-filter: blur(12px);          /* frosted‐glass blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* faint white border for definition */
+  border-radius: 8px;                   /* match your other rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);   /* deeper shadow under cards */
+  padding: 2rem;                        /* inner spacing */
+  color: #f1f1f1;                       /* ensure text is visible on dark background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover (optional) – slightly “pop” the card on hover */
+#testimonials .testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------------------------------- */
+/* 3) Testimonial Text Colors               */
+/* ---------------------------------------- */
+#testimonials .testimonial-card p {
+  color: #f1f1f1;      /* slightly off‐white for readability */
+  margin-bottom: 1rem; /* space before author line */
+  line-height: 1.6;    /* comfortable line‐height */
+}
+
+#testimonials .testimonial-author {
+  color: #ffd700;      /* golden accent for author name */
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------- */
+/* 4) Ensure Grid is Centered on Desktop    */
+/* ---------------------------------------- */
+#testimonials .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;      /* horizontally center the grid */
+  padding: 0 1rem;     /* small side padding on narrow screens */
+}
+
+/* ---------------------------------------- */
+/* 5) Mobile Behavior (stack cards vertically) */
+/* ---------------------------------------- */
+@media (max-width: 768px) {
+  #testimonials .testimonial-grid {
+    grid-template-columns: 1fr; /* one‐column stack on small screens */
+    gap: 1.5rem;
+  }
+  #testimonials .section-title {
+    font-size: 2rem;           /* slightly smaller on mobile if desired */
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   “Get In Touch” Section Styles
+   ──────────────────────────────────────────────────────────────── */
+
+/* 1) Make sure the entire section has some vertical padding */
+.contact-section {
+  padding: 6rem 10% 4rem; /* top/bottom padding similar to other “.section” blocks */
+  background-color: #000; /* or whatever background you’re using for that dark theme */
+}
+
+/* 2) Center the H2 (Section Title) */
+#contact .section-title {
+  text-align: center;
+  color: #ffd700;          /* same gold color as your other headings */
+  margin-bottom: 1.5rem;   /* space below the title */
+}
+
+/* 3) Center the subtext paragraph */
+#contact .contact-text {
+  text-align: center;
+  color: #f1f1f1;          /* off-white text on black */
+  font-size: 1.1rem;
+  margin-bottom: 2rem;     /* space before the button */
+}
+
+/* 4) Container for the button(s) – center-align its contents */
+.contact-buttons {
+  text-align: center;
+}
+
+/* 5) Style the Facebook button similar to your other “btn-secondary” */
+.contact-buttons .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  border: 2px solid #ffd700;    /* gold border */
+  background-color: transparent;
+  color: #ffd700;               /* gold text */
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  margin: 0 auto;               /* ensure centered if width is constrained */
+}
+
+/* 6) Hover effect for the Facebook button */
+.contact-buttons .btn-secondary:hover {
+  background-color: #ffd700;     /* fill gold on hover */
+  color: #000;                   /* black text on hover */
+}
+
+/* 7) Responsive Tweak: if you ever add more than one button,
+       make them stack vertically on very narrow screens */
+@media (max-width: 480px) {
+  .contact-buttons .btn-secondary {
+    display: block;
+    width: 80%;               /* button spans 80% of viewport width */
+    margin: 0.5rem auto;      /* small vertical gap and auto-centering */
+    text-align: center;
+  }
+}
